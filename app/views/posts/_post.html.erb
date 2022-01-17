@@ -1,0 +1,28 @@
+<div id="<%= dom_id post %>">
+  <div class='mb-3'>
+    <strong class="text-gray">Title:</strong>
+    <span class='text-gray-light'>
+      <%= post.title %>
+    </span>
+  </div>
+  <blockquote class='row'>
+    <div class='col-md-10'>
+      <strong class='text-gray'>Content:</strong>
+      <span class='text-gray-light'>
+        <%= post.content %>
+      </span>
+    </div>
+
+    <div class='col-md-2'>
+      <div class="flex justify-content-end">
+        <strong class='text-gray'>Vote:</strong>
+        <span class='text-gray-light ml-1'>
+          &nbsp;<%= post.vote %>
+        </span>
+      </div>
+      <div class="flex justify-content-end mt-2 <%= 'd-none' unless action_name == 'index' %>" >
+        <%= link_to "Show post", post, class: 'link-nav' %>
+      </div>
+    </div>
+  </blockquote>
+</div>

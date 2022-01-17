@@ -10,7 +10,11 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class='background-gray antialiased h-100'
+        data-controller-name='<%= controller_name %>'
+        data-action-name='<%= action_name %>'>>
+    <div class="container mt-5 w-75">
+      <%= yield %>
+    </div>
   </body>
 </html>

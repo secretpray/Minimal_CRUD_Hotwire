@@ -1,19 +1,39 @@
 # Minimal_CRUD_Hotwire
 
-* ruby -v (3.1.0)
+<details>
+  <summary>Getting Started</summary>
 
-* rails -v (7.1.0)
+  ## Check:
 
-### Generate resources:
+  * ruby -v (3.1.0)
 
-* rails new Minimal_CRUD_Hotwire -j esbuild -c bootstrap -d=postgresql -T
+  * rails -v (7.1.0)
 
-* bin/rails g scaffold Post title content:text vote:integer
+  ## Install:
 
-* bin/rails active_storage:install
+  * git clone git@github.com:secretpray/Minimal_CRUD_Hotwire.git
 
-* bin/rails action_text:install
+  * cd Minimal_CRUD_Hotwire
 
-* bin/rails db:migrate
+  * bundle
 
-* bin/rails db:setup
+  * bin/rails db:setup
+  
+  * yarn install --check-files
+  
+  * yarn run build
+  
+  * yarn run build:css
+  
+  * redis-server --daemonize yes
+  
+  * bin/dev
+
+</details>
+
+<details>
+  <summary>Video preview</summary>
+  
+  https://user-images.githubusercontent.com/17977331/150115839-7933c7ac-d335-4074-99f0-b8cf1f62c54c.mov
+
+</details>

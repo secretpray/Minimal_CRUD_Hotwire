@@ -1,21 +1,20 @@
 <%= turbo_stream_from 'posts' %>
 
-<div class='fs-3' id='post-title'>
-  <h2 class='text-yellow-500 mt-2'>
-    Create post
-  </h2>
-  <%#= link_to "Create post", 'javascript:void(0);', class: 'btn btn-outline-warning' %>
-</div>
-<div id='post_form'>
-  <%= render 'posts/form', post: Post.new %>
-</div>
-
-<h2 class='text-yellow-500 mt-5' id='posts_counter'>
-  <%= render 'posts/posts_count', count: Post.count %>
-</h2>
-
 <%= turbo_frame_tag :posts do %>
-  <div class="row my-4 justify-between">
+  <div class='fs-3' id='post-title'>
+    <h2 class='text-yellow-500 mt-2'>
+      Create post
+    </h2>
+  </div>
+  <div id='post_form'>
+    <%= render 'posts/form', post: Post.new %>
+  </div>
+
+  <h2 class='text-yellow-500 mt-5' id='posts_counter'>
+    <%= render 'posts/posts_count', count: Post.count %>
+  </h2>
+
+  <div class="row my-4 justify-between" id='post-list'>
     <%= render @posts %>
   </div>
 <% end %>

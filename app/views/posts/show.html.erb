@@ -1,5 +1,6 @@
-<!-- <div class="mb-4"> -->
-  <%#= link_to "Back to posts", posts_path, class: 'link-nav', target: :_top %>
-<!-- </div> -->
-
-<%= render @post %>
+<div class="mb-4">
+  <%= link_to "Back to posts", posts_path, class: 'link-nav', target: :_top %>
+</div>
+<%= turbo_frame_tag dom_id @post do %>
+  <%= render @post %>
+<% end %>

@@ -9,8 +9,4 @@ class Post < ApplicationRecord
   def update_counter
     broadcast_update_to :posts, target: "posts_counter", partial: 'posts/posts_count', locals: { count: Post.count }
   end
-
-  # def replace_list_with_one
-  #   broadcast_replace_to :posts, target: "posts", partial: 'posts/post', locals: { post: self }
-  # end
 end

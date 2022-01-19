@@ -1,5 +1,8 @@
 <% if post.errors.any? %>
-  <div style="color: red">
+  <div style="color: red"
+       id='errors-container'
+       data-controller="autohide"
+       data-form-utils-target="errors">
     <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
     <ul>

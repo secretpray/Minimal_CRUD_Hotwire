@@ -24,10 +24,13 @@
         </div>
         <div class='flex justify-content-end gap-2 align-items-center mt-2'>
           <div class="flex <%= 'd-none' if action_name == 'show' %>" >
-            <%= link_to "Show", post, class: 'link-nav' %>
+            <%# params_filter = ActionController::Parameters.new({ filter: request.params.present? }).permit! %>
+            <%#= link_to "Show", post_path(post, params: params_filter), class: 'link-nav' %>
+            <%= link_to "Show", post, class: 'link-nav', data: {turbo_frame: :_top } %>
           </div>
           <%= button_to "Destroy", post, method: :delete, class: 'btn btn-outline-warning' %>
-          <%= link_to "Edit", edit_post_path(post), class: 'btn btn-warning' %>
+          <%= link_to "Edit", edit_post_path(post),
+                              class: 'btn btn-warning' %>
         </div>
       </div>
     </blockquote>

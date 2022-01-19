@@ -1,0 +1,5 @@
+<div class="text-gray-700 mb-3">
+  <%= link_to root_path, class: 'link-nav', id: 'clock' do %>
+    <%= Time.zone.now.strftime("%A, %D: %k:%M:%S.%L") %>
+  <% end %>
+</div>

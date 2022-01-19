@@ -1,0 +1,5 @@
+<% if @post.errors.any? %>
+  <%= turbo_stream.replace(@post, partial: 'posts/form', locals: { post: @post}) %>
+<% else %>
+  <%= turbo_stream.replace(@post) %>
+<% end %>

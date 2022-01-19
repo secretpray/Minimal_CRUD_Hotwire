@@ -1,6 +1,6 @@
-<%= link_to "Back to posts", posts_path, class: 'link-nav' %>
+<%#= link_to "Back to posts", posts_path, class: 'link-nav', target: :_top %>
 
-<%= form_with(model: post) do |form| %>
+<%= form_with model: post, id: dom_id(post), target: :_top do |form| %>
   <%= render 'shared/errors', post: post %>
 
   <div class='form-group'>
@@ -20,6 +20,6 @@
 
   <div class='btn-group gap-2 align-center mt-3'>
     <%= form.submit class: 'btn btn-warning' %>
-    <%= link_to "Cancel", @post, class: 'btn btn-outline-warning' %>
+    <%= link_to "Cancel", root_path, class: 'btn btn-outline-warning' unless post.new_record? %>
   </div>
 <% end %>

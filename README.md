@@ -3,7 +3,7 @@
 <details>
   <summary>Getting Started</summary>
 
-  ## Check:
+  ### Check:
 
   * ruby -v (3.1.0)
 
@@ -11,25 +11,48 @@
   
   * yarn -v (1.22.17)
 
-  ## Install:
+  ### Install:
 
-  * git clone git@github.com:secretpray/Minimal_CRUD_Hotwire.git
-
-  * cd Minimal_CRUD_Hotwire
-
-  * bundle
-
-  * bin/rails db:setup
+  * Clone repo
+  ```bash
+  git clone git@github.com:secretpray/Minimal_CRUD_Hotwire.git
+  ```
+  * Change Directory
+  ```bash
+  cd Minimal_CRUD_Hotwire
+  ```
+  * bundle install
+  ```bash
+  bundle
+  ```
+  * Setup DB
+  ```bash
+  bin/rails db:setup
+  ```
   
-  * yarn install --check-files
+  * start Redis
+  ```bash
+  redis-server --daemonize yes
+  ```
   
-  * yarn run build
+  * install Yarn
+  ```bash
+  yarn install --check-files
+  ```
   
-  * yarn run build:css
+  * Compile JS
+  ```bash
+  yarn run build
+  ```
+  * Compile CSS
+  ```bash
+  yarn run build:css
+  ```
   
-  * redis-server --daemonize yes
-  
-  * bin/dev
+  * or
+  ```bash
+  bin/dev
+  ```
 
 </details>
 
@@ -37,5 +60,10 @@
   <summary>Video preview</summary>
   
   https://user-images.githubusercontent.com/17977331/150115839-7933c7ac-d335-4074-99f0-b8cf1f62c54c.mov
+  
+  fixed show page
+  
+  https://user-images.githubusercontent.com/17977331/150205093-1095b266-3953-47e9-920b-fb3225558906.mov
+
 
 </details>

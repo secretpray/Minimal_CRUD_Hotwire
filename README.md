@@ -8,6 +8,8 @@
   * ruby -v (3.1.0)
 
   * rails -v (7.1.0)
+  
+  * yarn -v (1.22.17)
 
   ## Install:
 

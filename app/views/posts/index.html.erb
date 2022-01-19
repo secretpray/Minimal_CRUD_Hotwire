@@ -1,16 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<%= turbo_stream_from 'posts' %>
 
-<div class="flex mb-4 justify-content-between align-center">
-  <h1 class='text-yellow-500'>Posts</h1>
+<h3 class='text-yellow-500'>Create post</h3>
+<div id='post_form'>
+  <%= render 'posts/form', post: Post.new %>
+</div>
+
+<div class="flex mt-5 mb-4 justify-content-between align-center">
+  <h2 class='text-yellow-500' id='posts_counter'>
+    <%= render 'posts/posts_count', count: Post.count %>
+  </h2>
   <div style='margin-right: 20px;'>
     <%= link_to "New post", new_post_path, class: 'btn btn-outline-warning' %>
   </div>
 </div>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <div class="row my-4 justify-between">
-      <%= render post %>
-    </div>
-  <% end %>
-</div>
+<%= turbo_frame_tag :posts do %>
+  <div class="row my-4 justify-between">
+    <%= render @posts %>
+  </div>
+<% end %>

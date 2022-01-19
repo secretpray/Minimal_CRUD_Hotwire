@@ -39,6 +39,19 @@ $btn-close-white-filter: invert(19%) sepia(96%) saturate(7453%) hue-rotate(359de
   color: #dcdcdc;
 }
 
+.text-gray-600 {
+  color: #6c757d;
+}
+
+.text-gray-700 {
+  color: #495057;
+}
+
+.text-gray-800 {
+  color: #343a40;
+}
+
+
 .text-gray-light {
   color: #ababab;
 }
@@ -229,4 +242,17 @@ trix-toolbar .trix-dialog {
 }
 trix-toolbar .trix-button--dialog {
   color: #ccc;
+}
+
+.card {
+  background-color: #343a40 !important;
+}
+
+#clock {
+  color: #495057;
+  text-decoration: none;
+}
+
+#clock:hover {
+  text-decoration: underline;
 }

@@ -1,28 +1,35 @@
-<div id="<%= dom_id post %>">
-  <div class='mb-3'>
-    <strong class="text-gray">Title:</strong>
-    <span class='text-gray-light'>
-      <%= post.title %>
-    </span>
-  </div>
-  <blockquote class='row'>
-    <div class='col-md-10'>
-      <strong class='text-gray'>Content:</strong>
-      <span class='text-gray-light'>
-        <%= post.content %>
+<%= turbo_frame_tag dom_id(post) do %>
+
+  <div class="mb-4 card card-body">
+    <div style='margin: 10px 0 0 10px;''>
+      <strong class="fs-4 text-gray">Title:</strong>
+      <span class='fs-4 text-gray-light'>
+        &nbsp;<%= post.title %>
       </span>
     </div>
-
-    <div class='col-md-2'>
-      <div class="flex justify-content-end">
-        <strong class='text-gray'>Vote:</strong>
-        <span class='text-gray-light ml-1'>
-          &nbsp;<%= post.vote %>
+    <blockquote class='row'>
+      <div class='col-md-9'>
+        <strong class='fs-5 text-gray'>Content:</strong>
+        <span class='fs-5 text-gray-light'>
+          <%= post.content %>
         </span>
       </div>
-      <div class="flex justify-content-end mt-2 <%= 'd-none' unless action_name == 'index' %>" >
-        <%= link_to "Show post", post, class: 'link-nav' %>
+
+      <div class='col-md-3'>
+        <div class="flex justify-content-end">
+          <strong class='fs-5 text-gray'>Vote:</strong>
+          <span class='fs-5 text-gray-light fw-bold ml-1'>
+            &nbsp;<%= post.vote %>
+          </span>
+        </div>
+        <div class='flex justify-content-end gap-2 align-items-center mt-2'>
+          <div class="flex <%= 'd-none' if action_name == 'show' %>" >
+            <%= link_to "Show", post, class: 'link-nav' %>
+          </div>
+          <%= button_to "Destroy", post, method: :delete, class: 'btn btn-outline-warning' %>
+          <%= link_to "Edit", edit_post_path(post), class: 'btn btn-warning' %>
+        </div>
       </div>
-    </div>
-  </blockquote>
-</div>
+    </blockquote>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 <% if @post.errors.any? %>
   <%= turbo_stream.replace(@post, partial: 'posts/form', locals: { post: @post}) %>
 <% else %>
-  <%= turbo_stream.prepend(:posts, partial: 'posts/post', locals: { post: @post}) %>
+  <%= turbo_stream.prepend('post-list', partial: 'posts/post', locals: { post: @post }) %>
   <%= turbo_stream.update(:post_form, partial: 'posts/form', locals: { post: Post.new}) %>
 <% end %>
